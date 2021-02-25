@@ -3,10 +3,7 @@ V1 of my blackjack game
 #include <stdio.h>
 #include <time.h>			//needed to generate different random cards
 
-
-
 char cards[] = { '2', '3' , '4', '5' , '6', '7', '8', '9', 'J', 'Q', 'K', 'A' }; //initializing the possible "cards"
-
 
 int value(char c) 
 {
@@ -96,7 +93,7 @@ int main()
 		printf("\n\nWould you like to Hit or Stay (H/S)? ");
 		scanf_s("%c", &decision);
 
-		while (decision == 'H' && player_count <= 21)				//if decision is H and player count is lessthan or equal to 21 then the block code in while is executed
+		while (decision == 'H' && player_count <= 21)	//if decision is H and player count is lessthan or equal to 21 then the block code in while is executed
 		{
 			P = draw_card();										//draws card for player.
 			player_count += value(P);
