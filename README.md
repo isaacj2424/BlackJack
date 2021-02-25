@@ -1,13 +1,16 @@
 # BlackJack
 V1 of my blackjack game
 #include <stdio.h>
-#include <time.h>			//needed to generate different random cards
+#include <time.h>	//needed to generate different random cards
+
+
 
 char cards[] = { '2', '3' , '4', '5' , '6', '7', '8', '9', 'J', 'Q', 'K', 'A' }; //initializing the possible "cards"
 
+
 int value(char c) 
 {
-	int v;					//assigning cards a local variable to assign them a value and saving that value
+	int v;				//assigning cards a local variable to assign them a value and saving that value
 	switch (c)
 	{
 	case '2': v = 2;
@@ -42,7 +45,7 @@ int value(char c)
 char draw_card()				//intitializes the draw card function
 {
 
-	int n = (rand() + 0) % 12;	//this is to limit to the 12 possibilities
+	int n = (rand() + 0) % 12; //this is to limit to the 12 possibilities
 
 	return cards[n];
 }
@@ -93,7 +96,7 @@ int main()
 		printf("\n\nWould you like to Hit or Stay (H/S)? ");
 		scanf_s("%c", &decision);
 
-		while (decision == 'H' && player_count <= 21)	//if decision is H and player count is lessthan or equal to 21 then the block code in while is executed
+		while (decision == 'H' && player_count <= 21)				//if decision is H and player count is lessthan or equal to 21 then the block code in while is executed
 		{
 			P = draw_card();										//draws card for player.
 			player_count += value(P);
